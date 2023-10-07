@@ -1,4 +1,10 @@
 /* Add your styles here */
+body {
+  background-color: #f0f0f0; /* Light gray background color */
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
 .App {
   display: flex;
   justify-content: center;
@@ -7,20 +13,51 @@
 }
 
 .chat-container {
-  width: 400px;
-  background-color: #c29999;
+  width: 80%; /* Adjust the width as needed */
+  max-width: 600px; /* Limit the maximum width for larger screens */
+  margin: auto;
+  background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
+  text-align: center;
 }
 
-.input-container {
+.app-title {
+  color: #333;
+  font-size: 1.8em; /* Responsive font size */
   margin-bottom: 20px;
 }
 
+.chat-history {
+  max-height: 300px; /* Limit the height to create a scrolling effect */
+  overflow-y: auto;
+}
+
+.user-bubble,
+.response-bubble {
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 8px;
+  max-width: 70%;
+  align-self: flex-end;
+}
+
+.response-bubble {
+  background-color: #ecf0f1;
+  color: #333;
+  align-self: flex-start;
+}
+
+.input-container {
+  margin-top: 20px;
+}
+
 textarea {
-  width: 100%;
-  height: 100px;
+  width: calc(100% - 16px); /* Responsive width */
+  height: 80px;
   margin-bottom: 10px;
   padding: 8px;
   font-size: 14px;
@@ -30,25 +67,103 @@ textarea {
 
 .button-container {
   display: flex;
-  gap: 10px;
+  justify-content: space-around;
+  margin-top: 10px; /* Adjust the margin for better spacing */
 }
 
 button {
+  flex: 1; /* Equal width for all buttons */
   padding: 10px;
   font-size: 14px;
   cursor: pointer;
   border: none;
   border-radius: 4px;
-  background-color: #3498db;
-  color: #10c20d;
 }
 
-.result-container {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background-color: #ecf0f1;
+button.send {
+  background-color: #2ecc71; /* Green color for send button */
+  color: white;
+}
+
+button.clear-chat {
+  background-color: #e74c3c; /* Red color for clear chat button */
+  color: white;
+}
+
+button.regenerate {
+  background-color: #3498db; /* Blue color for regenerate button */
+  color: white;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.processing-indicator {
   margin-top: 10px;
+  font-weight: bold;
+  color: #57a3d6;
 }
 
-/* Add more styles as needed */
+.feedback-message {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.user-feedback {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.user-feedback p {
+  margin-bottom: 10px;
+}
+
+.user-feedback button {
+  margin: 0 5px;
+  padding: 8px;
+  background-color: #2ecc71; /* Emerald color */
+  color: rgb(64, 171, 37);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.user-feedback button:hover {
+  background-color: #27ae60; /* Darker Emerald color on hover */
+}
+
+.feedback-message {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.user-feedback {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.user-feedback p {
+  margin-bottom: 10px;
+}
+
+.user-feedback button {
+  margin: 0 5px;
+  padding: 8px;
+  background-color: #2ecc71; /* Emerald color */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.user-feedback button:hover {
+  background-color: #27ae60; /* Darker Emerald color on hover */
+}
+
